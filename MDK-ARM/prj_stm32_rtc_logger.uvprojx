@@ -685,6 +685,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Temp_ADC</GroupName>
+          <Files>
+            <File>
+              <FileName>temp_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\temp_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>temp_adc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Core\Inc\temp_adc.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>

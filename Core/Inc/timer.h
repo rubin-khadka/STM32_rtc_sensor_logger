@@ -3,6 +3,10 @@
 #ifndef TIMER_H
 #define TIMER_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* Private Include definition */
 #include "main.h"
 

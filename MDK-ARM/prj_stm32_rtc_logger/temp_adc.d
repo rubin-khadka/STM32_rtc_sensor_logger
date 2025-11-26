@@ -1,4 +1,5 @@
-prj_stm32_rtc_logger/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
+prj_stm32_rtc_logger/temp_adc.o: ..\Core\Src\temp_adc.c \
+  ..\Core\Inc\temp_adc.h ..\Core\Inc\timer.h ..\Core\Inc\main.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h \
   ..\Core\Inc\stm32f1xx_hal_conf.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h \
@@ -28,5 +29,4 @@ prj_stm32_rtc_logger/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h \
-  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_spi.h \
-  ..\Core\Inc\temp_adc.h ..\Core\Inc\timer.h
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_spi.h

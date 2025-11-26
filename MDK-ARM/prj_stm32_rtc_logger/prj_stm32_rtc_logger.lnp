@@ -21,6 +21,7 @@
 "prj_stm32_rtc_logger\system_stm32f1xx.o"
 "prj_stm32_rtc_logger\lcd.o"
 "prj_stm32_rtc_logger\timer.o"
+"prj_stm32_rtc_logger\temp_adc.o"
 --strict --scatter "prj_stm32_rtc_logger\prj_stm32_rtc_logger.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
