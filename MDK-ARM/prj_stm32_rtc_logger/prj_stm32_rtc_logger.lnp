@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+"prj_stm32_rtc_logger\startup_stm32f103xb.o"
+"prj_stm32_rtc_logger\main.o"
+"prj_stm32_rtc_logger\stm32f1xx_it.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_msp.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_gpio_ex.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_adc.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_adc_ex.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_rcc.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_rcc_ex.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_gpio.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_dma.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_cortex.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_pwr.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_flash.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_flash_ex.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_exti.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_i2c.o"
+"prj_stm32_rtc_logger\stm32f1xx_hal_spi.o"
+"prj_stm32_rtc_logger\system_stm32f1xx.o"
+"prj_stm32_rtc_logger\lcd.o"
+"prj_stm32_rtc_logger\timer.o"
+--strict --scatter "prj_stm32_rtc_logger\prj_stm32_rtc_logger.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "prj_stm32_rtc_logger.map" -o prj_stm32_rtc_logger\prj_stm32_rtc_logger.axf
