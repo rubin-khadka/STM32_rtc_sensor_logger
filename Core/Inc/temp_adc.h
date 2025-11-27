@@ -18,19 +18,21 @@ extern "C" {
 #define TEMP_ADC_CHANNEL 				0x00		// ADC Channel 0 (PA0)
 #define TEMP_ADC_SAMPLING_TIME 	0x03		// 28.5 sampling cycle
 
-// Sampling Time Values:
-#define ADC_SAMPLE_1_5_CYCLES    0x00
-#define ADC_SAMPLE_7_5_CYCLES    0x01  
-#define ADC_SAMPLE_13_5_CYCLES   0x02
-#define ADC_SAMPLE_28_5_CYCLES   0x03 
-#define ADC_SAMPLE_41_5_CYCLES   0x04
-#define ADC_SAMPLE_55_5_CYCLES   0x05
-#define ADC_SAMPLE_71_5_CYCLES   0x06
-#define ADC_SAMPLE_239_5_CYCLES  0x07
+// Temperature calculation
+#define VREF    								3.3f 		// 3.3V reference in mV
+#define ADC_RESOLUTION      		4095.0f // 12-bit ADC
+#define LM35_SCALE_FACTOR     	100.0f 	// LM35: 10mV/°C = 0.01V/°C × 100
 
+/* Global Variables */
+extern volatile uint32_t adc_raw_value;
+extern volatile uint8_t adc_conversion_complete;
 
 /* Function Prototypes */
 void temp_adc_init(void);
+void temp_adc_start_conversion(void);
+uint8_t temp_adc_is_ready(void);
+float temp_adc_read_celsius(void);
+void ADC1_2_IRQHandler(void);
 
 #ifdef __cplusplus
 }

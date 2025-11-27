@@ -107,7 +107,16 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+		if (temp_adc_is_ready())
+		{
+			float temperature = temp_adc_read_celsius();
+			
+			// Start Next conversion
+			temp_adc_start_conversion();
+		}
+		
+		// Put the temperature in the lcd
+		
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

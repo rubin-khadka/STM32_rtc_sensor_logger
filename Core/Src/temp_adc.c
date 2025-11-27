@@ -6,6 +6,10 @@
 	
 #include "temp_adc.h"
 
+/* Global Variables */
+volatile uint32_t adc_raw_value = 0;
+volatile uint8_t adc_conversion_complete = 0;
+
 /* Initialize ADC1 Channel 0 for temperature measurement */
 void temp_adc_init(void)
 {
@@ -37,6 +41,41 @@ void temp_adc_init(void)
 	// Enable ADC interrupt in NVIC
 	NVIC_EnableIRQ(ADC1_2_IRQn);   
 		
+	// Clear any previous values 
+	adc_raw_value = 0;
+	adc_conversion_complete = 0;
+	
 	// Brief stabilization delay
 	for (volatile uint32_t i = 0; i < 100000; i++);  // Approx 1ms delay
 }
+
+void temp_adc_start_conversion(void)
+{
+	adc_conversion_complete = 0;
+	ADC1->CR2 |= (0x01 << 22);
+	// ADC1->CR2 |= ADC_CR2_SWSTART;
+}
+
+uint8_t temp_adc_is_ready(void)
+{
+	return adc_conversion_complete;
+}
+
+float temp_adc_read_celsius(void)
+{
+	float voltage = (adc_raw_value  * VREF)/ ADC_RESOLUTION;
+	float temperature = voltage * LM35_SCALE_FACTOR;
+	return temperature;
+}
+
+void ADC1_2_IRQHandler(void)
+{
+	if (ADC1->SR & ADC_SR_EOC)
+	{
+		adc_raw_value = ADC1->DR;
+		adc_conversion_complete = 1;
+		ADC1->SR &= ~ADC_SR_EOC;
+	}
+}
+
+
