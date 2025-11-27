@@ -3,6 +3,10 @@
 #ifndef LCD_H
 #define LCD_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "main.h"
 #include "timer.h"
 
@@ -15,7 +19,6 @@
 #define D6(x) (x==1 ? (HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, GPIO_PIN_SET)) : (HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, GPIO_PIN_RESET)))
 #define D7(x) (x==1 ? (HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, GPIO_PIN_SET)) : (HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, GPIO_PIN_RESET)))
 
-// LCD Macros
 
 // LCD Function prototypes
 void lcd_init(void);
@@ -26,4 +29,8 @@ void lcd_set_cursor(uint8_t row, uint8_t col);
 void lcd_print(const char *);
 void lcd_clear(void);
 
+#ifdef __cplusplus
+}
 #endif
+
+#endif /* LCD_H */

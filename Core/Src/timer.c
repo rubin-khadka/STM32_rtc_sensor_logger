@@ -10,7 +10,7 @@ void timer2_init(void)
 	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
 	
 	// Define tick rate for timer 2
-	TIM2->PSC = 0x27F;
+	TIM2->PSC = 639;
 	TIM2->CNT = 0x00;
 	
 	// Update interrupt enabled
